@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> All in One Library</title>
+    <link rel="stylesheet" href="CSS/allinone.css">
+
+
+</head>
+
+<body>
+    <h1 class = "heading"> All in one Library</h1>
+    <form>
+        <input type="search" id = "searchInput" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="firstten" class = "image-container">
+        <img src="education/C Programming and Data Structures.jpg" alt="Education1">
+        <img src="education/C++ Programming.jpg" alt="Education2">
+        <img src="education/Python for Beginners 2021.jpg" alt="Education3">
+        <img src="education/Responsive Web Design with HTML5 and CSS3.jpg" alt="Education4">
+        <img src="education/Start Programming with HTML CSS And Javascript.jpg" alt="Education5">
+        <img src="education/The HTML AND CSS Workshop.jpg" alt="Education6">
+        <img src="fantasy/heir of fire.jpg" alt="Fantasy1">
+        <img src="fantasy/night circus.jpg" alt="Fantasy2">
+        <img src="fantasy/reaper at the gates.jpg" alt="Fantasy3">
+        <img src="fantasy/six of crows.jpg" alt="Fantasy4">
+        <a href="#" onclick="loadDiv('secondten')" class="next page">&#8250;</a>
+    </div>
+    
+    <div id="secondten" class = "image-container hidden">
+        <img src="horror/into the water.jpg" alt="Horror1">
+        <img src="horror/pet sematary.jpg" alt="Horror2">
+        <img src="horror/the hypnotist.jpg" alt="Horror3">
+        <img src="horror/the whisper man.jpg" alt="Horror4">
+        <img src="mysteries/silent patient.jpg" alt="Mysteries1">
+        <img src="mysteries/The Complete Novels.jpg" alt="Mysteries2">
+        <img src="mysteries/the man who knew too much.jpg" alt="Mysteries3">
+        <img src="mysteries/The Perfect Murder.jpg" alt="Mysteries4">
+        <img src="sciencefiction/children of time.jpg" alt="ScienceFiction1">
+        <img src="sciencefiction/dune 2.jpg" alt="ScienceFiction2">
+        <a href="#" onclick="loadDiv('firstten')" class="previous page">&#8249;</a>
+        <a href="#" onclick="loadDiv('last')" class="next page">&#8250;</a>
+    </div>
+
+    <div id="last" class = "image-container hidden">
+        <img src="sciencefiction/dune.jpg" alt="ScienceFiction3">
+        <img src="sciencefiction/foundation.jpg" alt="ScienceFiction4">
+        <a href="#" onclick="loadDiv('secondten')" class="previous page align">&#8249;</a>      
+    </div>
+
+   <div id="education" class = "image-container hidden">
+        <img src="education/C Programming and Data Structures.jpg" alt="Education1">
+        <img src="education/C++ Programming.jpg" alt="Education2">
+        <img src="education/Python for Beginners 2021.jpg" alt="Education3">
+        <img src="education/Responsive Web Design with HTML5 and CSS3.jpg" alt="Education4">
+        <img src="education/Start Programming with HTML CSS And Javascript.jpg" alt="Education5">
+        <img src="education/The HTML AND CSS Workshop.jpg" alt="Education6">
+   </div>
+
+   <div id="fantasy" class = "image-container hidden">
+        <img src="fantasy/heir of fire.jpg" alt="Fantasy1">
+        <img src="fantasy/night circus.jpg" alt="Fantasy2">
+        <img src="fantasy/reaper at the gates.jpg" alt="Fantasy3">
+        <img src="fantasy/six of crows.jpg" alt="Fantasy4">
+   </div>
+
+    <div id="horror" class = "image-container hidden">
+        <img src="horror/into the water.jpg" alt="Horror1">
+        <img src="horror/pet sematary.jpg" alt="Horror2">
+        <img src="horror/the hypnotist.jpg" alt="Horror3">
+        <img src="horror/the whisper man.jpg" alt="Horror4">
+    </div>
+
+    <div id="mysteries" class = "image-container hidden">
+        <img src="mysteries/silent patient.jpg" alt="Mysteries1">
+        <img src="mysteries/The Complete Novels.jpg" alt="Mysteries2">
+        <img src="mysteries/the man who knew too much.jpg" alt="Mysteries3">
+        <img src="mysteries/The Perfect Murder.jpg" alt="Mysteries4">
+    </div>
+
+    <div id="sciencefiction" class = "image-container hidden">
+        <img src="sciencefiction/children of time.jpg" alt="ScienceFiction1">
+        <img src="sciencefiction/dune 2.jpg" alt="ScienceFiction2">
+        <img src="sciencefiction/dune.jpg" alt="ScienceFiction3">
+        <img src="sciencefiction/foundation.jpg" alt="ScienceFiction4">
+    </div>
+
+<script>
+    function loadDiv(divId){
+        var divs=document.querySelectorAll('div');
+
+        //Hiding all divs
+        for (var i=0; i<divs.length;i++){
+            divs[i].classList.add('hidden');
+        }
+
+        //Showing the selected div
+        var div = document.getElementById(divId);
+        div.classList.remove('hidden');
+    }
+
+
+    
+    searchInput.addEventListener('input', searchResults);
+
+    function searchResults(){
+        var searchInput=document.getElementById('searchInput');
+        var searchText = searchInput.value;
+        var searchTextLowerCase = searchText.toLowerCase();
+        var divs=document.querySelectorAll('div');
+     //Hiding all divs
+        for (var i=0; i<divs.length;i++){
+            divs[i].classList.add('hidden');
+        }
+
+        //Showing the selected div
+        var div = document.getElementById(searchTextLowerCase);
+        div.classList.remove('hidden');
+
+    }
+</script>
+
+</body>
+
+</html>
